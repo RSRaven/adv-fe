@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ravenclub Posts</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header class="header clearfix">
+        <a href="#" class="header__logo"><img src="img/logo.png" alt="Ravenclub" class="header__img"></a>
+        <div class="header__user-info">
+            user@email
+        </div>
+    </header>
+
+    <section class="wrapper">
+        <!-- <article class="article">
+            <div class="article__image-wrapper">
+                <img src="img/article1.jpg" class="article__image">
+            </div>
+            <div class="article__info">
+                <span class="article__author">author</span>
+                <span class="article__description">description</span>
+                <span class="article__hashes">hash#1 - hash#2 - hash#3</span>
+            </div>
+            <p class="article__comments">
+                {{comments here}}
+            </p>
+            <div class="related-posts">
+                {{related posts here}}
+            </div>
+        </article> -->
+    </section>
+
+    <footer class="footer">
+        <p class="footer__info">&copy; 2016  Ravenclub.com  All Rights Reserved</p>
+    </footer>
+
+
+
+<script id="article-template" type="text/x-handlebars-template">
+    <article class="article">
+            <div class="article__image-wrapper">
+                <img src="{{context.imgUrl}}" class="article__image">
+            </div>
+            <div class="article__info">
+                <span class="article__author">{{user.name}}: </span>
+                <span class="article__description">{{context.description}}</span>
+                <span class="article__hashes">#hash1 #hash2 #hash3</span>
+            </div>
+            <div class="article__comments">
+                {{#each articleComments}}
+                    {{> comments }}
+                {{/each}}
+            </div>
+            <div class="related-posts clearfix">
+                <!-- <div class="post-sizer"></div> -->
+                {{#each posts}}
+                    {{> related }}
+                {{/each}}
+            </div>
+    </article>
+</script>
+
+<script id="article-comments-template" type="text/x-handlebars-template">
+    <p>{{username}}: {{text}}</p>
+</script>
+
+<script id="related-posts" type="text/x-handlebars-template">
+    <div class="post">
+        <div class="post__img-wrapper">
+            <img src="{{imgUrl}}" class="post__img">
+        </div>
+        <div class="post__comments">
+            {{description}}
+        </div>
+    </div>
+</script>
+
+<!--   <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{body}}
+    </div>
+  </div> -->
+
+
+
+<!--         <script type="text/x-handlebars-template" id="posts-container__list-template">
+            {{#each posts}}
+                {{> post-preview class="posts-container__post" }}
+            {{/each}}
+        </script>
+
+        <script type="text/x-handlebars-template" id="post-preview-template">
+            <div class="post-preview {{class}}" data-id="{{id}}">
+                <div class="post-preview__island">
+                    <div class="post-preview__img-wrapper">
+                        <img class="post-preview__img" src="{{imgUrl}}"></img>
+                    </div>
+                    <div class="post-preview__description">{{description}}</div>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars-template" id="posts-container__navigation-template">
+            <div class="posts-container__navigation-numbers">
+                {{#nav count selected}}
+                    <div data-id="{{number}}"
+                        class="posts-container__navigation-number {{#if selected}}posts-container__navigation-number_selected{{/if}}">
+                        {{number}}
+                    </div>
+                {{/nav}}
+            </div>
+        </script> -->
+
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/handlebars/handlebars.js"></script>
+    <script src="libs/isotope/dist/isotope.pkgd.js"></script>
+    <script src="libs/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>

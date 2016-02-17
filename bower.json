@@ -1,0 +1,28 @@
+{
+  "name": "project1",
+  "description": "Adv-Fe Project",
+  "main": "app.js",
+  "authors": [
+    "Lovygin Nikita"
+  ],
+  "license": "GPLv3",
+  "homepage": "https://github.com/RSRaven/adv-fe",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client_src",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "1.8.3",
+    "backbone": "~1",
+    "react": ">0.1.0",
+    "angular": "",
+    "handlebars": "^4.0.5",
+    "jquery": "^2.2.0",
+    "isotope": "^2.2.2",
+    "imagesloaded": "^4.1.0"
+  }
+}

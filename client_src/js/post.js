@@ -2,12 +2,8 @@ $(function(){
 
 var posts = Data.getPosts();
 var articleComments = Data.getPostComments();
-// console.log('articleComments= ', articleComments);
 var postTemplate = Handlebars.compile( $('#article-template').html() );
-
-
 var context = Data.getPost();
-
 
 Handlebars.registerPartial( 'comments', $('#article-comments-template').html() );
 Handlebars.registerPartial( 'related', $('#related-posts').html() );
@@ -38,22 +34,6 @@ $('.wrapper').html( postTemplate( {
     articleComments: articleComments,
     posts: posts
 }) );
-
-// var $isotope = $('.related-posts').isotope({
-//     itemSelector: '.post',
-//     percentPosition: true,
-//     layoutMode: 'masonry'
-//     // masonry: {
-//     //     columnWidth: '.post-sizer'
-//     // }
-// });
-
-// $isotope.imagesLoaded().progress( function() {
-//   $isotope.isotope('layout');
-//   console.log('another one...');
-// });
-
-
 
 var $grid = $('.related-posts').imagesLoaded( function() {
     $grid.isotope({

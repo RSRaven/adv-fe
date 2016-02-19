@@ -41,11 +41,11 @@ body {
 /* MAIN SECTION */
 
 .wrapper {
-    padding: 20px;
+    padding: 1%;
 }
 
 .article {
-    margin: 20px;
+    margin: 1%;
 }
 
 .article__image-wrapper {
@@ -53,8 +53,12 @@ body {
     text-align: center;
 }
 
+.article__image {
+    max-width: 100%;
+}
+
 .article__info {
-    padding: 20px;
+    padding: 1%;
 }
 
 .article__description {
@@ -62,11 +66,11 @@ body {
 }
 
 .article__comments {
-    padding: 20px;
+    padding: 1%;
 }
 
 .related-posts {
-    padding: 20px;
+    padding: 1%;
 }
 
 /*.post-sizer {
@@ -77,9 +81,9 @@ body {
 .post {
     border: 1px solid grey;
     float: left;
-    width: 300px;
-    max-width: 30%;
-    padding: 10px;
+    width: 28%;
+    /*max-width: 300px;*/
+    padding: 1%;
     margin: 1%;
     border-radius: 6px;
 }
@@ -88,7 +92,7 @@ body {
 }
 
 .post__img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .post__comments {

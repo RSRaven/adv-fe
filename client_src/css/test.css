@@ -16,6 +16,10 @@ body {
     padding: 20px;
 }
 
+.posts-table__item {
+    padding: 10px 0;
+}
+
 .posts-table__item--grey {
     background-color: #dddddd;
 }

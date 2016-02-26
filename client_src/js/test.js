@@ -18,26 +18,20 @@ Handlebars.registerHelper('json', function(json) {
     return new Handlebars.SafeString( html );
 });
 
-// когда делаю как в примере 
-// ret = ret + '<p class="posts-table__item">' + options.fn( posts[i].description ) + '</p>';
-// options.fn( posts[i].description ) - пустой.
-// вставляются только абзацы, но пустые
-
 Handlebars.registerHelper('table', function(posts, options) {
 
     var ret = '';
 
     for (var i=0; i < posts.length; i++) {
         if ( i % 2 === 1 ) {
-            ret = ret + '<p class="posts-table__item">' + posts[i].description + '</p>';
+            ret = ret + '<p class="posts-table__item">' + options.fn( posts[i] ) + '</p>';
         } else {
-            ret = ret + '<p class="posts-table__item--grey">' + posts[i].description + '</p>';
+            ret = ret + '<p class="posts-table__item posts-table__item--grey">' + options.fn( posts[i] ) + '</p>';
         }
     }
 
     return ret;
 });
-
 
 $('.posts-json').html( jsonPostsTemplate( {
     posts: posts

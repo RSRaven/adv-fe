@@ -7,15 +7,9 @@ var jsonTableTemplate = Handlebars.compile( $('#posts-table-template').html() );
 
 Handlebars.registerHelper('json', function(json) {
 
-    text = Handlebars.Utils.escapeExpression( JSON.stringify( json ) );
+    text = '<pre>' + Handlebars.Utils.escapeExpression( JSON.stringify( json, null, '\t' ) ) + '</pre>';
 
-    html = text.replace( '[', '<p>[</p>' )
-               .replace( /{/g, '<p>&nbsp;&nbsp;&nbsp;&nbsp;{</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' )
-               .replace( /,/g, ',</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' )
-               .replace( /},<\/p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/g, '<p>&nbsp;&nbsp;&nbsp;&nbsp;},</p>' )
-               .replace( '}]', '<p>&nbsp;&nbsp;&nbsp;&nbsp;}</p><p>]</p>' );
-
-    return new Handlebars.SafeString( html );
+    return new Handlebars.SafeString( text );
 });
 
 Handlebars.registerHelper('table', function(posts, options) {
@@ -23,11 +17,14 @@ Handlebars.registerHelper('table', function(posts, options) {
     var ret = '';
 
     for (var i=0; i < posts.length; i++) {
-        if ( i % 2 === 1 ) {
-            ret = ret + '<p class="posts-table__item">' + options.fn( posts[i] ) + '</p>';
-        } else {
-            ret = ret + '<p class="posts-table__item posts-table__item--grey">' + options.fn( posts[i] ) + '</p>';
+
+        var className = 'posts-table__item';
+
+        if ( i % 2 !== 1 ) {
+            className += ' posts-table__item--grey';
         }
+
+        ret = ret + '<p class="' + className+ '">' + options.fn( posts[i] ) + '</p>';
     }
 
     return ret;

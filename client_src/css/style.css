@@ -73,16 +73,10 @@ body {
     padding: 1%;
 }
 
-/*.post-sizer {
-    width: 300px;
-    max-width: 30%;
-}*/
-
 .post {
     border: 1px solid grey;
     float: left;
     width: 28%;
-    /*max-width: 300px;*/
     padding: 1%;
     margin: 1%;
     border-radius: 6px;

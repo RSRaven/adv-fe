@@ -16,22 +16,7 @@
     </header>
 
     <section class="wrapper">
-        <!-- <article class="article">
-            <div class="article__image-wrapper">
-                <img src="img/article1.jpg" class="article__image">
-            </div>
-            <div class="article__info">
-                <span class="article__author">author</span>
-                <span class="article__description">description</span>
-                <span class="article__hashes">hash#1 - hash#2 - hash#3</span>
-            </div>
-            <p class="article__comments">
-                {{comments here}}
-            </p>
-            <div class="related-posts">
-                {{related posts here}}
-            </div>
-        </article> -->
+
     </section>
 
     <footer class="footer">
@@ -54,7 +39,6 @@
                 {{/each}}
             </div>
             <div class="related-posts clearfix">
-                <!-- <div class="post-sizer"></div> -->
                 {{#each posts}}
                     {{> related }}
                 {{/each}}
@@ -69,7 +53,7 @@
 <script id="related-posts" type="text/x-handlebars-template">
     <div class="post">
         <div class="post__img-wrapper">
-            <img src="{{imgUrl}}" class="post__img">
+            <a href="post.html?id={{id}}"><img src="{{imgUrl}}" class="post__img"></a>
         </div>
         <div class="post__comments">
             {{{description}}}

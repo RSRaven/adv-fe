@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravenclub Posts</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header class="header clearfix">
+        <a href="#" class="header__logo"><img src="img/logo.png" alt="Ravenclub" class="header__img"></a>
+        <div class="header__user-info">
+            user@email
+        </div>
+    </header>
+
+    <section class="wrapper">
+
+    </section>
+
+    <footer class="footer">
+        <p class="footer__info">&copy; 2016  Ravenclub.com  All Rights Reserved</p>
+    </footer>
+
+<script id="article-template" type="text/x-handlebars-template">
+    <article class="article">
+            <div class="article__image-wrapper">
+                <img src="{{context.imgUrl}}" class="article__image">
+            </div>
+            <div class="article__info">
+                <span class="article__author">{{user.name}}: </span>
+                <span class="article__description">{{context.description}}</span>
+                <span class="article__hashes">#hash1 #hash2 #hash3</span>
+            </div>
+            <div class="article__comments">
+                {{#each articleComments}}
+                    {{> comments }}
+                {{/each}}
+            </div>
+            <div class="related-posts clearfix">
+                {{#each posts}}
+                    {{> related }}
+                {{/each}}
+            </div>
+    </article>
+</script>
+
+<script id="article-comments-template" type="text/x-handlebars-template">
+    <p>{{username}}: {{text}}</p>
+</script>
+
+<script id="related-posts" type="text/x-handlebars-template">
+    <div class="post">
+        <div class="post__img-wrapper">
+            <a href="post.html?id={{id}}"><img src="{{imgUrl}}" class="post__img"></a>
+        </div>
+        <div class="post__comments">
+            {{{description}}}
+        </div>
+    </div>
+</script>
+
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/handlebars/handlebars.js"></script>
+    <script src="libs/underscore/underscore.js"></script>
+    <script src="libs/isotope/dist/isotope.pkgd.js"></script>
+    <script src="libs/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* COMMON STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 50px auto;
+    width: 90%;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+/* HEADER */
+
+.header {
+    height: 100px;
+    background-color: #eeeeee;
+}
+
+.header__logo {
+    float: left;
+    line-height: 100px;
+}
+
+.header__img {
+    vertical-align: middle;
+}
+
+.header__user-info {
+    float: right;
+}
+
+/* END OF HEADER */
+
+/* MAIN SECTION */
+
+.wrapper {
+    padding: 1%;
+}
+
+.article {
+    margin: 1%;
+}
+
+.article__image-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.article__image {
+    max-width: 100%;
+}
+
+.article__info {
+    padding: 1%;
+}
+
+.article__description {
+    padding: 0 20px;
+}
+
+.article__comments {
+    padding: 1%;
+}
+
+.related-posts {
+    padding: 1%;
+}
+
+.post {
+    border: 1px solid grey;
+    float: left;
+    width: 28%;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 6px;
+}
+
+.post__img-wrapper {
+}
+
+.post__img {
+    width: 100%;
+}
+
+.post__comments {
+    font-size: 14px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/* END OF MAIN SECTION */
+
+/* FOOTER */
+
+.footer {
+    height: 100px;
+    background-color: #eeeeee;
+}
+
+.footer__info {
+    text-align: center;
+    line-height: 100px;
+}
+
+/* END OF FOOTER */

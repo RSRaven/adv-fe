@@ -1,0 +1,27 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Adv-Fe Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RSRaven/adv-fe.git"
+  },
+  "author": "Lovygin Nikita",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/RSRaven/adv-fe/issues"
+  },
+  "homepage": "https://github.com/RSRaven/adv-fe#readme",
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-clean": "~0",
+    "run-sequence": "~1.1.5"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

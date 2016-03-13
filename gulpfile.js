@@ -58,7 +58,11 @@ var path = {
 
 var serverConfig = {
     server: {
+<<<<<<< HEAD
         baseDir: 'client_build'
+=======
+        baseDir: "client_build"
+>>>>>>> 98a6b3cb960e12e27280e6d60dd53b95b2d3527d
     },
     tunnel: true,
     host: 'localhost',
@@ -85,8 +89,13 @@ gulp.task('build:css', function () {
                .pipe(sourcemaps.init())
                .pipe(sass())
                .pipe(prefixer())
+<<<<<<< HEAD
                .pipe(cssnano())
                .pipe(gulpif( !argv.prod, sourcemaps.write() ))
+=======
+               .pipe(gulpif( argv.prod, cssnano() ))
+               .pipe(sourcemaps.write())
+>>>>>>> 98a6b3cb960e12e27280e6d60dd53b95b2d3527d
                .pipe(gulp.dest(path.build.css))
                .pipe(reload({stream: true}));
 });
@@ -95,8 +104,13 @@ gulp.task('build:js', function () {
     return gulp.src(path.src.js)
                .pipe(rigger())
                .pipe(sourcemaps.init())
+<<<<<<< HEAD
                .pipe(uglify())
                .pipe(gulpif( !argv.prod, sourcemaps.write() ))
+=======
+               .pipe(gulpif( argv.prod, uglify()))
+               .pipe(sourcemaps.write())
+>>>>>>> 98a6b3cb960e12e27280e6d60dd53b95b2d3527d
                .pipe(gulp.dest(path.build.js))
                .pipe(reload({stream: true}));
 });

@@ -58,7 +58,7 @@ var path = {
 
 var serverConfig = {
     server: {
-        baseDir: "client_build"
+        baseDir: 'client_build'
     },
     tunnel: true,
     host: 'localhost',
@@ -85,8 +85,8 @@ gulp.task('build:css', function () {
                .pipe(sourcemaps.init())
                .pipe(sass())
                .pipe(prefixer())
-               .pipe(gulpif( argv.prod, cssnano() ))
-               .pipe(sourcemaps.write())
+               .pipe(cssnano())
+               .pipe(gulpif( !argv.prod, sourcemaps.write() ))
                .pipe(gulp.dest(path.build.css))
                .pipe(reload({stream: true}));
 });
@@ -95,8 +95,8 @@ gulp.task('build:js', function () {
     return gulp.src(path.src.js)
                .pipe(rigger())
                .pipe(sourcemaps.init())
-               .pipe(gulpif( argv.prod, uglify()))
-               .pipe(sourcemaps.write())
+               .pipe(uglify())
+               .pipe(gulpif( !argv.prod, sourcemaps.write() ))
                .pipe(gulp.dest(path.build.js))
                .pipe(reload({stream: true}));
 });

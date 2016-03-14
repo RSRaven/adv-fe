@@ -1,0 +1,6 @@
+{
+  "directory": "client_src/libs",
+  "registry": "http://bower.herokuapp.com",
+  "proxy": "http://192.168.50.70:3128/",
+  "https-proxy": "https://192.168.50.70:3128/"
+}
